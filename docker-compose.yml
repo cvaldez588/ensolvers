@@ -1,0 +1,50 @@
+## change IP 192.168.0.52 by your private network: 
+version: '3'
+
+networks:
+  main:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: "ensolvers"
+
+services:
+  mysql-db:
+    build: ./mysql
+    restart: always
+    volumes:
+      - './mysql_data:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+    ports:
+      - "3306:3306"
+    networks:
+      - main    
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - HOSTDB=mysql-db
+      - PORTDB=3306
+      - DBUSER=root
+      - DBPASSWORD=admin
+      - DATABASE=ensolvers
+    volumes:
+      - ./backend:/backend
+    depends_on:
+      - mysql-db
+    networks:
+      - main
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./frontend:/frontend
+    depends_on:
+      - backend
+    networks:
+      - main   

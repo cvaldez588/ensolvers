@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="title">
+        <a class="folder-link" routerLink="/folder">Folders</a> > Work
+    </div>
+    <table class="table-items" >
+        <tr class="folder-items" *ngFor="let work of works; trackBy: trackId">
+            <th><input class="checkbox-item" type="checkbox" [checked]="work.mark" (click)="markWork(work.work_id, work.mark)"></th>
+            <th class="item-description">{{ work.description }}</th>
+            <th class="link-edit" [routerLink]="['/edit', work.work_id]">Edit</th>
+        </tr>
+    </table>
+    <div class="action">
+        <input class="input-text" type="text" placeholder="New Task" name="newWork" [(ngModel)]="newWork" maxlength="45">
+        <button class="button-add" (click)="addWork()">Add</button>
+    </div>
+    <div class="error-lenght" *ngIf="showError">Lenght should be between 5 and 45 characters</div>
+</div>

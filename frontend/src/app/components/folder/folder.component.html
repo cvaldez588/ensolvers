@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="title">Folders</div>
+    <table class="table-items">
+        <tr class="folder-items" *ngFor="let folder of folders; trackBy: trackId ">
+            <th class="item-description">- {{ folder.description }}</th>
+            <th class="link-view" [routerLink]="['/work', folder.folder_id]" >View Items</th>
+            <th class="link-remove" (click)="removeFolder(folder.folder_id)">Remove</th>
+        </tr>
+    </table>
+    <div class="add-folder">
+        <input class="input-text" type="text" placeholder="New Folder" name="newFolder" [(ngModel)]="newFolder" maxlength="45"> 
+           <button class="button-add" (click)="addFolder()">Add</button>
+           <div class="error-lenght" *ngIf="showError">Lenght should be between 5 and 45 characters</div>
+    </div>
+</div>

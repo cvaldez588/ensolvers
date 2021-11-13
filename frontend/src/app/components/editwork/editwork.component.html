@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="title">Editing Task: "{{work.description}}"</div> 
+    <input class="edit-text" type="text" name="newDescription" [(ngModel)]="newDescription" maxlength="45">
+    <div class="error-lenght" *ngIf="showError">Lenght should be between 5 and 45 characters</div>
+    <div class="action">
+        <button class = "button-save" (click)="saveTask()">Save</button>
+        <button class = "button-cancel" [routerLink]="['/work', work.folder_id]" >Cancel</button>
+    </div>
+</div>

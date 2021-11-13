@@ -1,0 +1,49 @@
+.container {
+    border: 5px double black;
+    padding: 10px;
+    max-width: 500px;
+    font-family: 'Courier';
+}
+
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.table-items {
+    font-weight: lighter;
+}
+.link-view, .link-remove {
+    color: blue;
+    text-decoration: none;
+    padding-left: 25px;
+    margin-left: 50px;
+}
+.link-view:hover, .link-remove:hover, .button-add:hover {
+    cursor: pointer;
+}
+
+.button-add {
+    margin-left: 5px;
+    border-radius: 0%;
+    margin-bottom: 20px;
+}
+
+.add-folder {
+    margin-top: 20px;
+}
+
+.item-description {
+    text-align: left;
+    min-width: 200px;
+}
+
+.input-text {
+    width: 350px;
+}
+
+.error-lenght {
+    color: red;
+}
