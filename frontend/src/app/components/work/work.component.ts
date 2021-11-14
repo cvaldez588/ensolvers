@@ -31,7 +31,7 @@ export class WorkComponent implements OnInit {
   }
   
   addWork() {
-    if (this.newWork.length > 5){
+    if (this.newWork.length > 4){
       const work = {
         description: this.newWork,
         mark: false,

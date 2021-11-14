@@ -37,7 +37,7 @@ export class EditworkComponent implements OnInit {
     })
   }
   saveTask() {
-    if (this.newDescription.length > 5){
+    if (this.newDescription.length > 4){
       const work = {
         work_id: this.work.work_id,
         description: this.newDescription,
