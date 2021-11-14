@@ -24,7 +24,7 @@ export class FolderComponent implements OnInit {
     })
   }
   addFolder() {
-    if (this.newFolder.length > 5){
+    if (this.newFolder.length > 4){
       this.folderService.save({ description: this.newFolder }).subscribe((folder: IFolder) => {
         this.getFolders();
       })
