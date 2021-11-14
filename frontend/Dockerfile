@@ -1,9 +1,13 @@
 FROM node:14
 
-WORKDIR /frontend
+# Create the workdir
+RUN mkdir /myapp
+WORKDIR /myapp
 
-ADD . /frontend
-
+# Install packages
+COPY package*.json ./
 RUN npm install
 
+# Copy source code to the container
+COPY . ./
 CMD npm run start-docker
