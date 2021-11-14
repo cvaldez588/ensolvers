@@ -47,3 +47,28 @@
 .error-lenght {
     color: red;
 }
+
+.folder-items {
+    height: 35px !important;
+}
+
+input[type='checkbox'] {
+    width: 14px !important; 
+    height: 14px !important; 
+    margin: 5px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    -o-appearance: none; 
+    appearance: none; 
+    outline: 1px solid gray; 
+    box-shadow: none; 
+    text-align: center; 
+    line-height: 1em; 
+    Background: white; 
+} 
+
+input[type='checkbox']:checked:after {
+    content: '✔';
+    color: white;
+    background: orange;
+}
